@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- set styles on the top -->
+    <style>
+        .chart-container {
+            max-width: 1050px;
+            /* border: 2px solid red; */
+            margin: 0 auto;
+            /* auto centers the div */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+		.description {
+			max-width: 1050px;
+            margin: 0 auto;
+			/* margin-left: 30px; */
+			font-family: 'Arial Narrow';
+			font-size: 20px;
+		}
+        svg {
+            /* border: 2px solid purple; */
+            overflow: visible;
+        }
+
+        h1 {
+            margin-left: 30px;
+            margin-bottom: 0;
+            /* border: 2px solid green; */
+        }
+
+        .x .tick line {
+            stroke: rgba(0, 0, 0, .2);
+        }
+
+        .y .tick line {
+            stroke: rgba(0, 0, 0, .2);
+        }
+
+        .x .domain {
+            display: none;
+        }
+
+        .y .domain {
+            display: none;
+        }
+
+        .y .tick text {
+            font-size: 14px;
+            fill: #333;
+
+        }
+
+        .x .tick text {
+            font-size: 14px;
+            fill: #333;
+        }
+
+        .grid-example {
+            display: grid;
+            grid-template-columns: 175px 175px 175px;
+			grid-template-rows: 300px 300px 300px
+            row-gap: 50px;
+            column-gap: 50px;
+        }
+
+		.source-description {
+			max-width: 1050px;
+            margin: 0 auto;
+			font-family: 'Arial Narrow';
+			font-size: 15px;
+		}
+
+		.source-description2 {
+			max-width: 1050px;
+            margin: 0 auto;
+			font-family: 'Arial Narrow';
+			font-size: 15px;
+		}
+		#swatches {
+            text-align: right;
+            list-style: none;
+            margin-bottom: 0;
+        }
+
+		#swatches li {
+            display: inline-block;
+            padding-left: 2em;
+        }
+
+		#swatches li::before {
+            content: "\25A0";
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            font-size: 24px;
+        }
+
+		
+        #swatches li.nhpi::before {
+            color: #FFA500;
+        }
+
+		#swatches2 {
+            text-align: right;
+            list-style: none;
+            margin-bottom: 0;
+        }
+
+		#swatches2 li {
+            display: inline-block;
+            padding-left: 2em;
+        }
+
+		#swatches2 li::before {
+            content: "\25A0";
+            width: 1.5em;
+			height: 1.5em;
+            margin-left: -1em;
+            font-size: 24px;
+			border-radius: 50%;
+			display: inline-block;
+        }
+
+		#swatches2 li.totalpc::before {
+            color: #69b3a2;
+        }
+
+		#swatches2 li.nhpi::before {
+            color: #4C4082;
+        }
+
+		.dot {
+			height: 25px;
+			width: 25px;
+			background-color: #69b3a2;
+			border-radius: 50%;
+			display: inline-block;
+		}
+
+		.dot2 {
+			height: 25px;
+			width: 25px;
+			background-color: #4C4082;
+			border-radius: 50%;
+			display: inline-block;
+		}
+    </style>
+</head>
+
+<body>
+    <div class="chart-container" id="container">
+        <h1>
+            Why Are Native Hawaiian & Pacific Islander <br> COVID-19 Case Rates So High?
+        </h1>
+	</div>
+
+	<div class="description">
+		<p >COVID-19 Case Rates for states with the largest Native Hawaiian & Pacific Islander (NHPI)
+			<br> populations that also report disaggregated NHPI COVID-19 data reveal that 
+			<br> NHPIs have the highest or nearly the highest case rates among all racial and ethnic groups.</p>
+		<br>
+		<u1 id="swatches">
+			<li class="nhpi"> Native Hawaiian & Pacific Islander COVID-19 Case Rate</li>
+		</u1>
+		<br>
+		<br>
+		<br>
+
+	</div>
+
+    <div class="chart-container">
+
+		<div class="grid-example" id="container2">
+
+
+				<svg width="250px" height="220" id="chart_01">
+				</svg>
+				<svg width="250px" height="220" id="chart_02">
+				</svg>
+				<svg width="250px" height="220" id="chart_03">
+				</svg>
+				<svg width="250px" height="220" id="chart_04">
+				</svg>
+				<svg width="250px" height="220" id="chart_05">
+				</svg>
+				<svg width="250px" height="220" id="chart_06">
+				</svg>
+				<svg width="250px" height="220" id="chart_07">
+				</svg>
+				<svg width="250px" height="220" id="chart_08">
+				</svg>
+				<svg width="250px" height="220" id="chart_09">
+				</svg>
+				<svg width="250px" height="220" id="chart_10">
+				</svg>
+				<svg width="250px" height="220" id="chart_11">
+				</svg>
+				<svg width="250px" height="220" id="chart_12">
+				</svg>
+		</div>
+	</div>
+	<div class="source-description">
+		<p>
+			Source: UCLA Center for Health Policy Research, Native Hawaiian & Pacific Islander Data Policy Lab. Note: data represents crude case rate.
+		</p>
+	</div>
+	<div class="description">
+		<p> 
+			Studies have found that COVID-19 vulnerability has been correlated with income levels. 
+			<br>
+			It may not be a coincidence that NHPIs have a lower per capita income in 
+			each of the <br> above states.
+		</p>
+	</div>
+
+	<div class="chart-container">
+		<u1 id="swatches2">
+			<li class="nhpi2"> NHPI Per Capita Income</li>
+		</u1>
+		<br>
+		<u1 id="swatches2">
+			<li class="totalpc"> Total Population Per Capita Income</li>
+		</u1>
+		<br>
+		<svg width="750px" height="500" id="chart_13">
+		</svg>
+	</div>
+	<div class="source-description2">
+		<p>
+			Source: U.S. Census Bureau, 2010 American Community Survey 5-year, Table DP03.
+		</p>
+	</div>
+</body>
+
+
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<!-- we're using d3 version 6 (the latest version) for all out work -->
+
+<script>
+    console.log({ d3 })
+    //https://observablehq.com/@mbostock/global-temperature-trends
+
+    //cool tricks for javascript arrays
+    //objects
+    //look up tables
+    //looping, or for each
+
+    // let svg = d3.select("body")
+    //     .select("svg")
+
+    // console.log(svg)
+
+
+    //console.log
+
+    //arrays
+    //objects
+    //functions
+
+    // var	margin = {top: 30, right: 10, bottom: 30, left: 10}
+    // width = 250 - margin.left - margin.right,
+	// height = 220 - margin.top - margin.bottom;
+
+
+    // var	chart1 = d3.select("body")
+    //     .append("svg")
+    //         .attr("width", width + margin.left + margin.right)
+    //         .attr("height", height + margin.top + margin.bottom)
+    //     .append("g")
+    //         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    
+    // var	chart2 = d3.select("body")
+    //     .append("svg")
+    //         .attr("width", width + margin.left + margin.right)
+    //         .attr("height", height + margin.top + margin.bottom)
+    //     .append("g")
+    //         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  
+    // var	chart3 = d3.select("body")
+    //     .append("svg")
+    //         .attr("width", width + margin.left + margin.right)
+    //         .attr("height", height + margin.top + margin.bottom)
+    //     .append("g")
+    //         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+
+    // var	chart4 = d3.select("body")
+    //     .append("svg")
+    //         .attr("width", width + margin.left + margin.right)
+    //         .attr("height", height + margin.top + margin.bottom)
+    //     .append("g")
+    //         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+    // var	chart5 = d3.select("body")
+    //     .append("svg")
+    //         .attr("width", width + margin.left + margin.right)
+    //         .attr("height", height + margin.top + margin.bottom)
+    //     .append("g")
+    //         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    // var	chart6 = d3.select("body")
+    //     .append("svg")
+    //         .attr("width", width + margin.left + margin.right)
+    //         .attr("height", height + margin.top + margin.bottom)
+    //     .append("g")
+    //         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    
+    // var	chart7 = d3.select("body")
+    //     .append("svg")
+    //         .attr("width", width + margin.left + margin.right)
+    //         .attr("height", height + margin.top + margin.bottom)
+    //     .append("g")
+    //         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  
+    // var	chart3 = d3.select("body")
+    //     .append("svg")
+    //         .attr("width", width + margin.left + margin.right)
+    //         .attr("height", height + margin.top + margin.bottom)
+    //     .append("g")
+    //         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    // var	chart3 = d3.select("body")
+    //     .append("svg")
+    //         .attr("width", width + margin.left + margin.right)
+    //         .attr("height", height + margin.top + margin.bottom)
+    //     .append("g")
+    //         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+    // var	chart3 = d3.select("body")
+    //     .append("svg")
+    //         .attr("width", width + margin.left + margin.right)
+    //         .attr("height", height + margin.top + margin.bottom)
+    //     .append("g")
+    //         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    // ALASKA
+    d3.csv("01_alaska.csv").then(function (data) {
+
+        //when temp is loaded, then pass data into this block
+        //all references to the data need to be in this block
+
+        //d3.csv is part of a suite of other functions that can do json, xml, tsv too.  
+        //https://github.com/d3/d3-fetch
+
+		let svg = d3.select("#chart_01")
+
+
+
+        data.forEach(function (row) {
+            row.date = new Date( row.date )
+            row.indexed_ave = +row.case_rate
+        })
+
+        
+
+        console.log(data)
+
+
+        let margin = { top: 20, right: 10, bottom: 20, left: 30 }
+			width = 250 - margin.left - margin.right,
+			height = 220 - margin.top - margin.bottom;
+
+        //d3 scales for the x and y axis
+        //domain takes the data we have and maps them into SVG space
+        //in this case we need to use scaleTime because we're dealin time data
+        let x = d3.scaleTime()
+            .domain(d3.extent(data.map(function (d) { return d.date }))) //d3 extent
+            .range([margin.left, width - margin.right])
+
+        //in this case we need to use scaleLinear because we're dealin linear data
+        let y = d3.scaleLinear()
+            .domain(d3.extent(data.map(function (d) { return d.indexed_ave })))
+            .range([height - margin.bottom, margin.top])
+
+
+        //define the settings for our axes
+        //https://github.com/d3/d3-axis
+        // https://github.com/d3/d3-time-format
+        //https://github.com/d3/d3-format
+        let yAxisSettings = d3.axisLeft(y) //set axis to the left
+            .ticks(0) //approx how many ticks, the function will not necesarily give you that number
+            .tickSize(0) //size of tick lines
+            // .tickFormat(d3.format("+.0%")) //what format do you want https://github.com/d3/d3-format 
+            .tickPadding(10) //distance from tick labels to tick marks
+
+        let xAxisSettings = d3.axisBottom(x)
+            .ticks(3)
+            .tickSize(5)
+            .tickPadding(10)
+            .tickFormat(d3.timeFormat("%Y"))
+
+        let bg = svg.append("rect")
+            .attr("x", margin.left)
+            .attr("y", 0)
+            .attr("width", width-35)
+            .attr("height", height-10)
+            .style("fill", "rgba(0,0,0,.04)")
+
+        //adding to the axes to our chart
+        let xAxis = svg.append("g")
+            .attr("class", "x axis") //give each axis a class
+            .call(xAxisSettings)
+            .attr("transform", `translate(0,${height - margin.bottom})`)
+
+
+        let yAxis = svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxisSettings)
+            .attr("transform", `translate(${margin.left},0)`)
+
+        let chartText = svg.append("text")
+            .attr("x", ((width / 2)+10))             
+            .attr("y", 0 - (margin.top / 2))
+            .attr("text-anchor", "middle")  
+            .style("font-size", "20px") 
+            .style("text-decoration", "underline")
+			.style("font-weight", "bold")
+            .text("Alaska")
+
+        let line = d3.line() //define a line function
+            .defined(d => !isNaN(d.indexed_ave))
+            .x(function (d) { return x(d.date) }) //accessing date 
+            .y(function (d) { return y(d.case_rate) }) //accesssing value 
+        
+        let grouped_data = d3.group(data, d => d.race_eth);
+
+        console.log(grouped_data)
+
+        let race_eth_groups = Array.from(grouped_data.keys())
+
+        let linepath = svg.append("g")
+        .selectAll(".line")
+        .data(grouped_data)
+        .join("path")
+        .attr("class", function(d) {
+            return "line " +  d[0]
+        })
+        .attr("d", function(d) {
+            return line(d[1])
+        })
+        .style("fill", "none")
+        .style("stroke", d => {
+            if(d[0] == "NHPI") {
+                return "orange"
+            } else {
+                return "#999"
+            }
+        })
+        .style("stroke-width", d => {
+            if(d[0] == "NHPI") {
+                return "3px"
+            } else {
+                return "1px"
+            }
+        })
+
+        let baseline = svg.append("line")
+        .attr("x1", margin.left)
+        .attr("x2", width - 5)
+        .attr("y1", y(0))
+        .attr("y2", y(0))
+        .style("stroke", "black")
+        .style("stroke-width", "2px")
+
+    })
+
+	// ARKANSAS
+	d3.csv("02_arkansas.csv").then(function (data) {
+
+		//when temp is loaded, then pass data into this block
+		//all references to the data need to be in this block
+
+		//d3.csv is part of a suite of other functions that can do json, xml, tsv too.  
+		//https://github.com/d3/d3-fetch
+
+		let svg = d3.select("#chart_02")
+
+
+
+		data.forEach(function (row) {
+			row.date = new Date( row.date )
+			row.indexed_ave = +row.case_rate
+		})
+
+
+
+		console.log(data)
+
+
+		let margin = { top: 20, right: 10, bottom: 20, left: 30 }
+			width = 250 - margin.left - margin.right,
+			height = 220 - margin.top - margin.bottom;
+
+		//d3 scales for the x and y axis
+		//domain takes the data we have and maps them into SVG space
+		//in this case we need to use scaleTime because we're dealin time data
+		let x = d3.scaleTime()
+			.domain(d3.extent(data.map(function (d) { return d.date }))) //d3 extent
+			.range([margin.left, width - margin.right])
+
+		//in this case we need to use scaleLinear because we're dealin linear data
+		let y = d3.scaleLinear()
+			.domain(d3.extent(data.map(function (d) { return d.indexed_ave })))
+			.range([height - margin.bottom, margin.top])
+
+
+		//define the settings for our axes
+		//https://github.com/d3/d3-axis
+		// https://github.com/d3/d3-time-format
+		//https://github.com/d3/d3-format
+		let yAxisSettings = d3.axisLeft(y) //set axis to the left
+			.ticks(0) //approx how many ticks, the function will not necesarily give you that number
+			.tickSize(0) //size of tick lines
+			// .tickFormat(d3.format("+.0%")) //what format do you want https://github.com/d3/d3-format 
+			.tickPadding(10) //distance from tick labels to tick marks
+
+		let xAxisSettings = d3.axisBottom(x)
+			.ticks(3)
+			.tickSize(5)
+			.tickPadding(10)
+			.tickFormat(d3.timeFormat("%Y"))
+
+		let bg = svg.append("rect")
+			.attr("x", margin.left)
+			.attr("y", 0)
+			.attr("width", width-35)
+			.attr("height", height-10)
+			.style("fill", "rgba(0,0,0,.04)")
+
+		//adding to the axes to our chart
+		let xAxis = svg.append("g")
+			.attr("class", "x axis") //give each axis a class
+			.call(xAxisSettings)
+			.attr("transform", `translate(0,${height - margin.bottom})`)
+
+
+		let yAxis = svg.append("g")
+			.attr("class", "y axis")
+			.call(yAxisSettings)
+			.attr("transform", `translate(${margin.left},0)`)
+
+		let chartText = svg.append("text")
+			.attr("x", ((width / 2)+10))             
+			.attr("y", 0 - (margin.top / 2))
+			.attr("text-anchor", "middle")  
+			.style("font-size", "20px") 
+			.style("font-weight", "bold")
+			.style("text-decoration", "underline")  
+			.text("Arkansas")
+
+		let line = d3.line() //define a line function
+			.defined(d => !isNaN(d.indexed_ave))
+			.x(function (d) { return x(d.date) }) //accessing date 
+			.y(function (d) { return y(d.case_rate) }) //accesssing value 
+
+		let grouped_data = d3.group(data, d => d.race_eth);
+
+		console.log(grouped_data)
+
+		let race_eth_groups = Array.from(grouped_data.keys())
+
+		let linepath = svg.append("g")
+		.selectAll(".line")
+		.data(grouped_data)
+		.join("path")
+		.attr("class", function(d) {
+			return "line " +  d[0]
+		})
+		.attr("d", function(d) {
+			return line(d[1])
+		})
+		.style("fill", "none")
+		.style("stroke", d => {
+			if(d[0] == "NHPI") {
+				return "orange"
+			} else {
+				return "#999"
+			}
+		})
+		.style("stroke-width", d => {
+			if(d[0] == "NHPI") {
+				return "3px"
+			} else {
+				return "1px"
+			}
+		})
+
+		let baseline = svg.append("line")
+		.attr("x1", margin.left)
+		.attr("x2", width - 5)
+		.attr("y1", y(0))
+		.attr("y2", y(0))
+		.style("stroke", "black")
+		.style("stroke-width", "2px")
+
+		})
+
+  
+   // CALIFORNIA
+	d3.csv("03_california.csv").then(function (data) {
+
+//when temp is loaded, then pass data into this block
+//all references to the data need to be in this block
+
+//d3.csv is part of a suite of other functions that can do json, xml, tsv too.  
+//https://github.com/d3/d3-fetch
+
+let svg = d3.select("#chart_03")
+
+
+
+data.forEach(function (row) {
+	row.date = new Date( row.date )
+	row.indexed_ave = +row.case_rate
+})
+
+
+
+console.log(data)
+
+
+let margin = { top: 20, right: 10, bottom: 20, left: 30 }
+	width = 250 - margin.left - margin.right,
+	height = 220 - margin.top - margin.bottom;
+
+//d3 scales for the x and y axis
+//domain takes the data we have and maps them into SVG space
+//in this case we need to use scaleTime because we're dealin time data
+let x = d3.scaleTime()
+	.domain(d3.extent(data.map(function (d) { return d.date }))) //d3 extent
+	.range([margin.left, width - margin.right])
+
+//in this case we need to use scaleLinear because we're dealin linear data
+let y = d3.scaleLinear()
+	.domain(d3.extent(data.map(function (d) { return d.indexed_ave })))
+	.range([height - margin.bottom, margin.top])
+
+
+//define the settings for our axes
+//https://github.com/d3/d3-axis
+// https://github.com/d3/d3-time-format
+//https://github.com/d3/d3-format
+let yAxisSettings = d3.axisLeft(y) //set axis to the left
+	.ticks(0) //approx how many ticks, the function will not necesarily give you that number
+	.tickSize(0) //size of tick lines
+	// .tickFormat(d3.format("+.0%")) //what format do you want https://github.com/d3/d3-format 
+	.tickPadding(10) //distance from tick labels to tick marks
+
+let xAxisSettings = d3.axisBottom(x)
+	.ticks(3)
+	.tickSize(5)
+	.tickPadding(10)
+	.tickFormat(d3.timeFormat("%Y"))
+
+let bg = svg.append("rect")
+	.attr("x", margin.left)
+	.attr("y", 0)
+	.attr("width", width-35)
+	.attr("height", height-10)
+	.style("fill", "rgba(0,0,0,.04)")
+
+//adding to the axes to our chart
+let xAxis = svg.append("g")
+	.attr("class", "x axis") //give each axis a class
+	.call(xAxisSettings)
+	.attr("transform", `translate(0,${height - margin.bottom})`)
+
+
+let yAxis = svg.append("g")
+	.attr("class", "y axis")
+	.call(yAxisSettings)
+	.attr("transform", `translate(${margin.left},0)`)
+
+let chartText = svg.append("text")
+	.attr("x", ((width / 2)+10))             
+	.attr("y", 0 - (margin.top / 2))
+	.attr("text-anchor", "middle")  
+	.style("font-size", "20px") 
+	.style("font-weight", "bold")
+	.style("text-decoration", "underline")  
+	.text("California")
+
+let line = d3.line() //define a line function
+	.defined(d => !isNaN(d.indexed_ave))
+	.x(function (d) { return x(d.date) }) //accessing date 
+	.y(function (d) { return y(d.case_rate) }) //accesssing value 
+
+let grouped_data = d3.group(data, d => d.race_eth);
+
+console.log(grouped_data)
+
+let race_eth_groups = Array.from(grouped_data.keys())
+
+let linepath = svg.append("g")
+.selectAll(".line")
+.data(grouped_data)
+.join("path")
+.attr("class", function(d) {
+	return "line " +  d[0]
+})
+.attr("d", function(d) {
+	return line(d[1])
+})
+.style("fill", "none")
+.style("stroke", d => {
+	if(d[0] == "NHPI") {
+		return "orange"
+	} else {
+		return "#999"
+	}
+})
+.style("stroke-width", d => {
+	if(d[0] == "NHPI") {
+		return "3px"
+	} else {
+		return "1px"
+	}
+})
+
+let baseline = svg.append("line")
+.attr("x1", margin.left)
+.attr("x2", width - 5)
+.attr("y1", y(0))
+.attr("y2", y(0))
+.style("stroke", "black")
+.style("stroke-width", "2px")
+
+})
+
+
+   // COLORADO
+	d3.csv("04_colorado.csv").then(function (data) {
+
+		//when temp is loaded, then pass data into this block
+		//all references to the data need to be in this block
+
+		//d3.csv is part of a suite of other functions that can do json, xml, tsv too.  
+		//https://github.com/d3/d3-fetch
+
+		let svg = d3.select("#chart_04")
+
+
+
+		data.forEach(function (row) {
+			row.date = new Date( row.date )
+			row.indexed_ave = +row.case_rate
+		})
+
+
+
+		console.log(data)
+
+
+		let margin = { top: 20, right: 10, bottom: 20, left: 30 }
+			width = 250 - margin.left - margin.right,
+			height = 220 - margin.top - margin.bottom;
+
+		//d3 scales for the x and y axis
+		//domain takes the data we have and maps them into SVG space
+		//in this case we need to use scaleTime because we're dealin time data
+		let x = d3.scaleTime()
+			.domain(d3.extent(data.map(function (d) { return d.date }))) //d3 extent
+			.range([margin.left, width - margin.right])
+
+		//in this case we need to use scaleLinear because we're dealin linear data
+		let y = d3.scaleLinear()
+			.domain(d3.extent(data.map(function (d) { return d.indexed_ave })))
+			.range([height - margin.bottom, margin.top])
+
+
+		//define the settings for our axes
+		//https://github.com/d3/d3-axis
+		// https://github.com/d3/d3-time-format
+		//https://github.com/d3/d3-format
+		let yAxisSettings = d3.axisLeft(y) //set axis to the left
+			.ticks(0) //approx how many ticks, the function will not necesarily give you that number
+			.tickSize(0) //size of tick lines
+			// .tickFormat(d3.format("+.0%")) //what format do you want https://github.com/d3/d3-format 
+			.tickPadding(10) //distance from tick labels to tick marks
+
+		let xAxisSettings = d3.axisBottom(x)
+			.ticks(3)
+			.tickSize(5)
+			.tickPadding(10)
+			.tickFormat(d3.timeFormat("%Y"))
+
+		let bg = svg.append("rect")
+			.attr("x", margin.left)
+			.attr("y", 0)
+			.attr("width", width-35)
+			.attr("height", height-10)
+			.style("fill", "rgba(0,0,0,.04)")
+
+		//adding to the axes to our chart
+		let xAxis = svg.append("g")
+			.attr("class", "x axis") //give each axis a class
+			.call(xAxisSettings)
+			.attr("transform", `translate(0,${height - margin.bottom})`)
+
+
+		let yAxis = svg.append("g")
+			.attr("class", "y axis")
+			.call(yAxisSettings)
+			.attr("transform", `translate(${margin.left},0)`)
+
+		let chartText = svg.append("text")
+			.attr("x", ((width / 2)+10))             
+			.attr("y", 0 - (margin.top / 2))
+			.attr("text-anchor", "middle")  
+			.style("font-size", "20px") 
+			.style("font-weight", "bold")
+			.style("text-decoration", "underline")  
+			.text("Colorado")
+
+		let line = d3.line() //define a line function
+			.defined(d => !isNaN(d.indexed_ave))
+			.x(function (d) { return x(d.date) }) //accessing date 
+			.y(function (d) { return y(d.case_rate) }) //accesssing value 
+
+		let grouped_data = d3.group(data, d => d.race_eth);
+
+		console.log(grouped_data)
+
+		let race_eth_groups = Array.from(grouped_data.keys())
+
+		let linepath = svg.append("g")
+		.selectAll(".line")
+		.data(grouped_data)
+		.join("path")
+		.attr("class", function(d) {
+			return "line " +  d[0]
+		})
+		.attr("d", function(d) {
+			return line(d[1])
+		})
+		.style("fill", "none")
+		.style("stroke", d => {
+			if(d[0] == "NHPI") {
+				return "orange"
+			} else {
+				return "#999"
+			}
+		})
+		.style("stroke-width", d => {
+			if(d[0] == "NHPI") {
+				return "3px"
+			} else {
+				return "1px"
+			}
+		})
+
+		let baseline = svg.append("line")
+		.attr("x1", margin.left)
+		.attr("x2", width - 5)
+		.attr("y1", y(0))
+		.attr("y2", y(0))
+		.style("stroke", "black")
+		.style("stroke-width", "2px")
+
+		})
+
+
+// GEORGIA
+	d3.csv("05_georgia.csv").then(function (data) {
+
+		//when temp is loaded, then pass data into this block
+		//all references to the data need to be in this block
+
+		//d3.csv is part of a suite of other functions that can do json, xml, tsv too.  
+		//https://github.com/d3/d3-fetch
+
+		let svg = d3.select("#chart_05")
+
+
+
+		data.forEach(function (row) {
+			row.date = new Date( row.date )
+			row.indexed_ave = +row.case_rate
+		})
+
+
+
+		console.log(data)
+
+
+		let margin = { top: 20, right: 10, bottom: 20, left: 30 }
+			width = 250 - margin.left - margin.right,
+			height = 220 - margin.top - margin.bottom;
+
+		//d3 scales for the x and y axis
+		//domain takes the data we have and maps them into SVG space
+		//in this case we need to use scaleTime because we're dealin time data
+		let x = d3.scaleTime()
+			.domain(d3.extent(data.map(function (d) { return d.date }))) //d3 extent
+			.range([margin.left, width - margin.right])
+
+		//in this case we need to use scaleLinear because we're dealin linear data
+		let y = d3.scaleLinear()
+			.domain(d3.extent(data.map(function (d) { return d.indexed_ave })))
+			.range([height - margin.bottom, margin.top])
+
+
+		//define the settings for our axes
+		//https://github.com/d3/d3-axis
+		// https://github.com/d3/d3-time-format
+		//https://github.com/d3/d3-format
+		let yAxisSettings = d3.axisLeft(y) //set axis to the left
+			.ticks(0) //approx how many ticks, the function will not necesarily give you that number
+			.tickSize(0) //size of tick lines
+			// .tickFormat(d3.format("+.0%")) //what format do you want https://github.com/d3/d3-format 
+			.tickPadding(10) //distance from tick labels to tick marks
+
+		let xAxisSettings = d3.axisBottom(x)
+			.ticks(3)
+			.tickSize(5)
+			.tickPadding(10)
+			.tickFormat(d3.timeFormat("%Y"))
+
+		let bg = svg.append("rect")
+			.attr("x", margin.left)
+			.attr("y", 0)
+			.attr("width", width-35)
+			.attr("height", height-10)
+			.style("fill", "rgba(0,0,0,.04)")
+
+		//adding to the axes to our chart
+		let xAxis = svg.append("g")
+			.attr("class", "x axis") //give each axis a class
+			.call(xAxisSettings)
+			.attr("transform", `translate(0,${height - margin.bottom})`)
+
+
+		let yAxis = svg.append("g")
+			.attr("class", "y axis")
+			.call(yAxisSettings)
+			.attr("transform", `translate(${margin.left},0)`)
+
+		let chartText = svg.append("text")
+			.attr("x", ((width / 2)+10))             
+			.attr("y", 0 - (margin.top / 2))
+			.attr("text-anchor", "middle")  
+			.style("font-size", "20px") 
+			.style("font-weight", "bold")
+			.style("text-decoration", "underline")  
+			.text("Georgia")
+
+		let line = d3.line() //define a line function
+			.defined(d => !isNaN(d.indexed_ave))
+			.x(function (d) { return x(d.date) }) //accessing date 
+			.y(function (d) { return y(d.case_rate) }) //accesssing value 
+
+		let grouped_data = d3.group(data, d => d.race_eth);
+
+		console.log(grouped_data)
+
+		let race_eth_groups = Array.from(grouped_data.keys())
+
+		let linepath = svg.append("g")
+		.selectAll(".line")
+		.data(grouped_data)
+		.join("path")
+		.attr("class", function(d) {
+			return "line " +  d[0]
+		})
+		.attr("d", function(d) {
+			return line(d[1])
+		})
+		.style("fill", "none")
+		.style("stroke", d => {
+			if(d[0] == "NHPI") {
+				return "orange"
+			} else {
+				return "#999"
+			}
+		})
+		.style("stroke-width", d => {
+			if(d[0] == "NHPI") {
+				return "3px"
+			} else {
+				return "1px"
+			}
+		})
+
+		let baseline = svg.append("line")
+		.attr("x1", margin.left)
+		.attr("x2", width - 5)
+		.attr("y1", y(0))
+		.attr("y2", y(0))
+		.style("stroke", "black")
+		.style("stroke-width", "2px")
+
+		})
+
+
+// HAWAII
+	d3.csv("06_hawaii.csv").then(function (data) {
+
+		//when temp is loaded, then pass data into this block
+		//all references to the data need to be in this block
+
+		//d3.csv is part of a suite of other functions that can do json, xml, tsv too.  
+		//https://github.com/d3/d3-fetch
+
+		let svg = d3.select("#chart_06")
+
+
+
+		data.forEach(function (row) {
+			row.date = new Date( row.date )
+			row.indexed_ave = +row.case_rate
+		})
+
+
+
+		console.log(data)
+
+
+		let margin = { top: 20, right: 10, bottom: 20, left: 30 }
+			width = 250 - margin.left - margin.right,
+			height = 220 - margin.top - margin.bottom;
+
+		//d3 scales for the x and y axis
+		//domain takes the data we have and maps them into SVG space
+		//in this case we need to use scaleTime because we're dealin time data
+		let x = d3.scaleTime()
+			.domain(d3.extent(data.map(function (d) { return d.date }))) //d3 extent
+			.range([margin.left, width - margin.right])
+
+		//in this case we need to use scaleLinear because we're dealin linear data
+		let y = d3.scaleLinear()
+			.domain(d3.extent(data.map(function (d) { return d.indexed_ave })))
+			.range([height - margin.bottom, margin.top])
+
+
+		//define the settings for our axes
+		//https://github.com/d3/d3-axis
+		// https://github.com/d3/d3-time-format
+		//https://github.com/d3/d3-format
+		let yAxisSettings = d3.axisLeft(y) //set axis to the left
+			.ticks(0) //approx how many ticks, the function will not necesarily give you that number
+			.tickSize(0) //size of tick lines
+			// .tickFormat(d3.format("+.0%")) //what format do you want https://github.com/d3/d3-format 
+			.tickPadding(10) //distance from tick labels to tick marks
+
+		let xAxisSettings = d3.axisBottom(x)
+			.ticks(3)
+			.tickSize(5)
+			.tickPadding(10)
+			.tickFormat(d3.timeFormat("%Y"))
+
+		let bg = svg.append("rect")
+			.attr("x", margin.left)
+			.attr("y", 0)
+			.attr("width", width-35)
+			.attr("height", height-10)
+			.style("fill", "rgba(0,0,0,.04)")
+
+		//adding to the axes to our chart
+		let xAxis = svg.append("g")
+			.attr("class", "x axis") //give each axis a class
+			.call(xAxisSettings)
+			.attr("transform", `translate(0,${height - margin.bottom})`)
+
+
+		let yAxis = svg.append("g")
+			.attr("class", "y axis")
+			.call(yAxisSettings)
+			.attr("transform", `translate(${margin.left},0)`)
+
+		let chartText = svg.append("text")
+			.attr("x", ((width / 2)+10))             
+			.attr("y", 0 - (margin.top / 2))
+			.attr("text-anchor", "middle")  
+			.style("font-size", "20px") 
+			.style("font-weight", "bold") 
+			.style("text-decoration", "underline")  
+			.text("Hawai'i")
+
+		let line = d3.line() //define a line function
+			.defined(d => !isNaN(d.indexed_ave))
+			.x(function (d) { return x(d.date) }) //accessing date 
+			.y(function (d) { return y(d.case_rate) }) //accesssing value 
+
+		let grouped_data = d3.group(data, d => d.race_eth);
+
+		console.log(grouped_data)
+
+		let race_eth_groups = Array.from(grouped_data.keys())
+
+		let linepath = svg.append("g")
+		.selectAll(".line")
+		.data(grouped_data)
+		.join("path")
+		.attr("class", function(d) {
+			return "line " +  d[0]
+		})
+		.attr("d", function(d) {
+			return line(d[1])
+		})
+		.style("fill", "none")
+		.style("stroke", d => {
+			if(d[0] == "NHPI") {
+				return "orange"
+			} else {
+				return "#999"
+			}
+		})
+		.style("stroke-width", d => {
+			if(d[0] == "NHPI") {
+				return "3px"
+			} else {
+				return "1px"
+			}
+		})
+
+		let baseline = svg.append("line")
+		.attr("x1", margin.left)
+		.attr("x2", width - 5)
+		.attr("y1", y(0))
+		.attr("y2", y(0))
+		.style("stroke", "black")
+		.style("stroke-width", "2px")
+
+		})
+
+	// OHIO
+	d3.csv("07_ohio.csv").then(function (data) {
+
+		//when temp is loaded, then pass data into this block
+		//all references to the data need to be in this block
+
+		//d3.csv is part of a suite of other functions that can do json, xml, tsv too.  
+		//https://github.com/d3/d3-fetch
+
+		let svg = d3.select("#chart_07")
+
+
+
+		data.forEach(function (row) {
+			row.date = new Date( row.date )
+			row.indexed_ave = +row.case_rate
+		})
+
+
+
+		console.log(data)
+
+
+		let margin = { top: 20, right: 10, bottom: 20, left: 30 }
+			width = 250 - margin.left - margin.right,
+			height = 220 - margin.top - margin.bottom;
+
+		//d3 scales for the x and y axis
+		//domain takes the data we have and maps them into SVG space
+		//in this case we need to use scaleTime because we're dealin time data
+		let x = d3.scaleTime()
+			.domain(d3.extent(data.map(function (d) { return d.date }))) //d3 extent
+			.range([margin.left, width - margin.right])
+
+		//in this case we need to use scaleLinear because we're dealin linear data
+		let y = d3.scaleLinear()
+			.domain(d3.extent(data.map(function (d) { return d.indexed_ave })))
+			.range([height - margin.bottom, margin.top])
+
+
+		//define the settings for our axes
+		//https://github.com/d3/d3-axis
+		// https://github.com/d3/d3-time-format
+		//https://github.com/d3/d3-format
+		let yAxisSettings = d3.axisLeft(y) //set axis to the left
+			.ticks(0) //approx how many ticks, the function will not necesarily give you that number
+			.tickSize(0) //size of tick lines
+			// .tickFormat(d3.format("+.0%")) //what format do you want https://github.com/d3/d3-format 
+			.tickPadding(10) //distance from tick labels to tick marks
+
+		let xAxisSettings = d3.axisBottom(x)
+			.ticks(3)
+			.tickSize(5)
+			.tickPadding(10)
+			.tickFormat(d3.timeFormat("%Y"))
+
+		let bg = svg.append("rect")
+			.attr("x", margin.left)
+			.attr("y", 0)
+			.attr("width", width-35)
+			.attr("height", height-10)
+			.style("fill", "rgba(0,0,0,.04)")
+
+		//adding to the axes to our chart
+		let xAxis = svg.append("g")
+			.attr("class", "x axis") //give each axis a class
+			.call(xAxisSettings)
+			.attr("transform", `translate(0,${height - margin.bottom})`)
+
+
+		let yAxis = svg.append("g")
+			.attr("class", "y axis")
+			.call(yAxisSettings)
+			.attr("transform", `translate(${margin.left},0)`)
+
+		let chartText = svg.append("text")
+			.attr("x", ((width / 2)+10))             
+			.attr("y", 0 - (margin.top / 2))
+			.attr("text-anchor", "middle")  
+			.style("font-size", "20px") 
+			.style("font-weight", "bold") 
+			.style("text-decoration", "underline")  
+			.text("Ohio")
+
+		let line = d3.line() //define a line function
+			.defined(d => !isNaN(d.indexed_ave))
+			.x(function (d) { return x(d.date) }) //accessing date 
+			.y(function (d) { return y(d.case_rate) }) //accesssing value 
+
+		let grouped_data = d3.group(data, d => d.race_eth);
+
+		console.log(grouped_data)
+
+		let race_eth_groups = Array.from(grouped_data.keys())
+
+		let linepath = svg.append("g")
+		.selectAll(".line")
+		.data(grouped_data)
+		.join("path")
+		.attr("class", function(d) {
+			return "line " +  d[0]
+		})
+		.attr("d", function(d) {
+			return line(d[1])
+		})
+		.style("fill", "none")
+		.style("stroke", d => {
+			if(d[0] == "NHPI") {
+				return "orange"
+			} else {
+				return "#999"
+			}
+		})
+		.style("stroke-width", d => {
+			if(d[0] == "NHPI") {
+				return "3px"
+			} else {
+				return "1px"
+			}
+		})
+
+		let baseline = svg.append("line")
+		.attr("x1", margin.left)
+		.attr("x2", width - 5)
+		.attr("y1", y(0))
+		.attr("y2", y(0))
+		.style("stroke", "black")
+		.style("stroke-width", "2px")
+
+		})
+
+	// OREGON
+	d3.csv("08_oregon.csv").then(function (data) {
+
+		//when temp is loaded, then pass data into this block
+		//all references to the data need to be in this block
+
+		//d3.csv is part of a suite of other functions that can do json, xml, tsv too.  
+		//https://github.com/d3/d3-fetch
+
+		let svg = d3.select("#chart_08")
+
+
+
+		data.forEach(function (row) {
+			row.date = new Date( row.date )
+			row.indexed_ave = +row.case_rate
+		})
+
+
+
+		console.log(data)
+
+
+		let margin = { top: 20, right: 10, bottom: 20, left: 30 }
+			width = 250 - margin.left - margin.right,
+			height = 220 - margin.top - margin.bottom;
+
+		//d3 scales for the x and y axis
+		//domain takes the data we have and maps them into SVG space
+		//in this case we need to use scaleTime because we're dealin time data
+		let x = d3.scaleTime()
+			.domain(d3.extent(data.map(function (d) { return d.date }))) //d3 extent
+			.range([margin.left, width - margin.right])
+
+		//in this case we need to use scaleLinear because we're dealin linear data
+		let y = d3.scaleLinear()
+			.domain(d3.extent(data.map(function (d) { return d.indexed_ave })))
+			.range([height - margin.bottom, margin.top])
+
+
+		//define the settings for our axes
+		//https://github.com/d3/d3-axis
+		// https://github.com/d3/d3-time-format
+		//https://github.com/d3/d3-format
+		let yAxisSettings = d3.axisLeft(y) //set axis to the left
+			.ticks(0) //approx how many ticks, the function will not necesarily give you that number
+			.tickSize(0) //size of tick lines
+			// .tickFormat(d3.format("+.0%")) //what format do you want https://github.com/d3/d3-format 
+			.tickPadding(10) //distance from tick labels to tick marks
+
+		let xAxisSettings = d3.axisBottom(x)
+			.ticks(3)
+			.tickSize(5)
+			.tickPadding(10)
+			.tickFormat(d3.timeFormat("%Y"))
+
+		let bg = svg.append("rect")
+			.attr("x", margin.left)
+			.attr("y", 0)
+			.attr("width", width-35)
+			.attr("height", height-10)
+			.style("fill", "rgba(0,0,0,.04)")
+
+		//adding to the axes to our chart
+		let xAxis = svg.append("g")
+			.attr("class", "x axis") //give each axis a class
+			.call(xAxisSettings)
+			.attr("transform", `translate(0,${height - margin.bottom})`)
+
+
+		let yAxis = svg.append("g")
+			.attr("class", "y axis")
+			.call(yAxisSettings)
+			.attr("transform", `translate(${margin.left},0)`)
+
+		let chartText = svg.append("text")
+			.attr("x", ((width / 2)+10))             
+			.attr("y", 0 - (margin.top / 2))
+			.attr("text-anchor", "middle")  
+			.style("font-size", "20px") 
+			.style("font-weight", "bold")
+			.style("text-decoration", "underline")  
+			.text("Oregon")
+
+		let line = d3.line() //define a line function
+			.defined(d => !isNaN(d.indexed_ave))
+			.x(function (d) { return x(d.date) }) //accessing date 
+			.y(function (d) { return y(d.case_rate) }) //accesssing value 
+
+		let grouped_data = d3.group(data, d => d.race_eth);
+
+		console.log(grouped_data)
+
+		let race_eth_groups = Array.from(grouped_data.keys())
+
+		let linepath = svg.append("g")
+		.selectAll(".line")
+		.data(grouped_data)
+		.join("path")
+		.attr("class", function(d) {
+			return "line " +  d[0]
+		})
+		.attr("d", function(d) {
+			return line(d[1])
+		})
+		.style("fill", "none")
+		.style("stroke", d => {
+			if(d[0] == "NHPI") {
+				return "orange"
+			} else {
+				return "#999"
+			}
+		})
+		.style("stroke-width", d => {
+			if(d[0] == "NHPI") {
+				return "3px"
+			} else {
+				return "1px"
+			}
+		})
+
+		let baseline = svg.append("line")
+		.attr("x1", margin.left)
+		.attr("x2", width - 5)
+		.attr("y1", y(0))
+		.attr("y2", y(0))
+		.style("stroke", "black")
+		.style("stroke-width", "2px")
+
+	})
+
+
+	// UTAH
+	d3.csv("09_utah.csv").then(function (data) {
+
+		//when temp is loaded, then pass data into this block
+		//all references to the data need to be in this block
+
+		//d3.csv is part of a suite of other functions that can do json, xml, tsv too.  
+		//https://github.com/d3/d3-fetch
+
+		let svg = d3.select("#chart_09")
+
+
+
+		data.forEach(function (row) {
+			row.date = new Date( row.date )
+			row.indexed_ave = +row.case_rate
+		})
+
+
+
+		console.log(data)
+
+
+		let margin = { top: 20, right: 10, bottom: 20, left: 30 }
+			width = 250 - margin.left - margin.right,
+			height = 220 - margin.top - margin.bottom;
+
+		//d3 scales for the x and y axis
+		//domain takes the data we have and maps them into SVG space
+		//in this case we need to use scaleTime because we're dealin time data
+		let x = d3.scaleTime()
+			.domain(d3.extent(data.map(function (d) { return d.date }))) //d3 extent
+			.range([margin.left, width - margin.right])
+
+		//in this case we need to use scaleLinear because we're dealin linear data
+		let y = d3.scaleLinear()
+			.domain(d3.extent(data.map(function (d) { return d.indexed_ave })))
+			.range([height - margin.bottom, margin.top])
+
+
+		//define the settings for our axes
+		//https://github.com/d3/d3-axis
+		// https://github.com/d3/d3-time-format
+		//https://github.com/d3/d3-format
+		let yAxisSettings = d3.axisLeft(y) //set axis to the left
+			.ticks(0) //approx how many ticks, the function will not necesarily give you that number
+			.tickSize(0) //size of tick lines
+			// .tickFormat(d3.format("+.0%")) //what format do you want https://github.com/d3/d3-format 
+			.tickPadding(10) //distance from tick labels to tick marks
+
+		let xAxisSettings = d3.axisBottom(x)
+			.ticks(3)
+			.tickSize(5)
+			.tickPadding(10)
+			.tickFormat(d3.timeFormat("%Y"))
+
+		let bg = svg.append("rect")
+			.attr("x", margin.left)
+			.attr("y", 0)
+			.attr("width", width-35)
+			.attr("height", height-10)
+			.style("fill", "rgba(0,0,0,.04)")
+
+		//adding to the axes to our chart
+		let xAxis = svg.append("g")
+			.attr("class", "x axis") //give each axis a class
+			.call(xAxisSettings)
+			.attr("transform", `translate(0,${height - margin.bottom})`)
+
+
+		let yAxis = svg.append("g")
+			.attr("class", "y axis")
+			.call(yAxisSettings)
+			.attr("transform", `translate(${margin.left},0)`)
+
+		let chartText = svg.append("text")
+			.attr("x", ((width / 2)+10))             
+			.attr("y", 0 - (margin.top / 2))
+			.attr("text-anchor", "middle")  
+			.style("font-size", "20px") 
+			.style("font-weight", "bold")
+			.style("text-decoration", "underline")  
+			.text("Utah")
+
+		let line = d3.line() //define a line function
+			.defined(d => !isNaN(d.indexed_ave))
+			.x(function (d) { return x(d.date) }) //accessing date 
+			.y(function (d) { return y(d.case_rate) }) //accesssing value 
+
+		let grouped_data = d3.group(data, d => d.race_eth);
+
+		console.log(grouped_data)
+
+		let race_eth_groups = Array.from(grouped_data.keys())
+
+		let linepath = svg.append("g")
+		.selectAll(".line")
+		.data(grouped_data)
+		.join("path")
+		.attr("class", function(d) {
+			return "line " +  d[0]
+		})
+		.attr("d", function(d) {
+			return line(d[1])
+		})
+		.style("fill", "none")
+		.style("stroke", d => {
+			if(d[0] == "NHPI") {
+				return "orange"
+			} else {
+				return "#999"
+			}
+		})
+		.style("stroke-width", d => {
+			if(d[0] == "NHPI") {
+				return "3px"
+			} else {
+				return "1px"
+			}
+		})
+
+		let baseline = svg.append("line")
+		.attr("x1", margin.left)
+		.attr("x2", width - 5)
+		.attr("y1", y(0))
+		.attr("y2", y(0))
+		.style("stroke", "black")
+		.style("stroke-width", "2px")
+
+		})
+
+
+	// WASHINGTON
+	d3.csv("10_washington.csv").then(function (data) {
+
+			//when temp is loaded, then pass data into this block
+			//all references to the data need to be in this block
+
+			//d3.csv is part of a suite of other functions that can do json, xml, tsv too.  
+			//https://github.com/d3/d3-fetch
+
+			let svg = d3.select("#chart_11")
+
+
+
+			data.forEach(function (row) {
+				row.date = new Date( row.date )
+				row.indexed_ave = +row.case_rate
+			})
+
+
+
+			console.log(data)
+
+
+			let margin = { top: 20, right: 10, bottom: 20, left: 30 }
+				width = 250 - margin.left - margin.right,
+				height = 220 - margin.top - margin.bottom;
+
+			//d3 scales for the x and y axis
+			//domain takes the data we have and maps them into SVG space
+			//in this case we need to use scaleTime because we're dealin time data
+			let x = d3.scaleTime()
+				.domain(d3.extent(data.map(function (d) { return d.date }))) //d3 extent
+				.range([margin.left, width - margin.right])
+
+			//in this case we need to use scaleLinear because we're dealin linear data
+			let y = d3.scaleLinear()
+				.domain(d3.extent(data.map(function (d) { return d.indexed_ave })))
+				.range([height - margin.bottom, margin.top])
+
+
+			//define the settings for our axes
+			//https://github.com/d3/d3-axis
+			// https://github.com/d3/d3-time-format
+			//https://github.com/d3/d3-format
+			let yAxisSettings = d3.axisLeft(y) //set axis to the left
+				.ticks(0) //approx how many ticks, the function will not necesarily give you that number
+				.tickSize(0) //size of tick lines
+				// .tickFormat(d3.format("+.0%")) //what format do you want https://github.com/d3/d3-format 
+				.tickPadding(10) //distance from tick labels to tick marks
+
+			let xAxisSettings = d3.axisBottom(x)
+				.ticks(3)
+				.tickSize(5)
+				.tickPadding(10)
+				.tickFormat(d3.timeFormat("%Y"))
+
+			let bg = svg.append("rect")
+				.attr("x", margin.left)
+				.attr("y", 0)
+				.attr("width", width-35)
+				.attr("height", height-10)
+				.style("fill", "rgba(0,0,0,.04)")
+
+			//adding to the axes to our chart
+			let xAxis = svg.append("g")
+				.attr("class", "x axis") //give each axis a class
+				.call(xAxisSettings)
+				.attr("transform", `translate(0,${height - margin.bottom})`)
+
+
+			let yAxis = svg.append("g")
+				.attr("class", "y axis")
+				.call(yAxisSettings)
+				.attr("transform", `translate(${margin.left},0)`)
+
+			let chartText = svg.append("text")
+				.attr("x", ((width / 2)+10))             
+				.attr("y", 0 - (margin.top / 2))
+				.attr("text-anchor", "middle")  
+				.style("font-size", "20px") 
+				.style("font-weight", "bold")
+				.style("text-decoration", "underline")  
+				.text("Washington")
+
+			let line = d3.line() //define a line function
+				.defined(d => !isNaN(d.indexed_ave))
+				.x(function (d) { return x(d.date) }) //accessing date 
+				.y(function (d) { return y(d.case_rate) }) //accesssing value 
+
+			let grouped_data = d3.group(data, d => d.race_eth);
+
+			console.log(grouped_data)
+
+			let race_eth_groups = Array.from(grouped_data.keys())
+
+			let linepath = svg.append("g")
+			.selectAll(".line")
+			.data(grouped_data)
+			.join("path")
+			.attr("class", function(d) {
+				return "line " +  d[0]
+			})
+			.attr("d", function(d) {
+				return line(d[1])
+			})
+			.style("fill", "none")
+			.style("stroke", d => {
+				if(d[0] == "NHPI") {
+					return "orange"
+				} else {
+					return "#999"
+				}
+			})
+			.style("stroke-width", d => {
+				if(d[0] == "NHPI") {
+					return "3px"
+				} else {
+					return "1px"
+				}
+			})
+
+			let baseline = svg.append("line")
+			.attr("x1", margin.left)
+			.attr("x2", width - 5)
+			.attr("y1", y(0))
+			.attr("y2", y(0))
+			.style("stroke", "black")
+			.style("stroke-width", "2px")
+
+			})
+
+	//per capita graph
+	d3.csv("per_capita_data.csv").then( function(data) {
+		
+		let margin = { top: 20, right: 10, bottom: 20, left: 30 }
+				width = 750 - margin.left - margin.right,
+				height = 500 - margin.top - margin.bottom;
+		
+		let svg = d3.select("#chart_13")
+			.append("svg")
+			.attr("width", width + margin.left + margin.right)
+			.attr("height", height + margin.top + margin.bottom)
+			.append("g")
+			.attr("transform", `translate(${margin.left}, ${margin.top})`);
+		
+
+				
+		// // Add X axis
+		// let x = d3.scaleLinear()
+		// .domain([4000, 31000])
+		// .range([ 0, width]);
+		// svg.append("g")
+		// .attr("transform", `translate(0, ${height})`)
+		// .call(d3.axisBottom(x))
+	
+		// // Y axis
+		// let y = d3.scaleBand()
+		// .range([ 0, height ])
+		// .domain(data.map(function(d) { return d.group; }))
+		// .padding(1);
+		// svg.append("g")
+		// .call(d3.axisLeft(y))
+	
+		// let yAxisSettings = d3.axisLeft(y) //set axis to the left
+		// 		.ticks(10) //approx how many ticks, the function will not necesarily give you that number
+		// 		.tickSize(2) //size of tick lines
+		// 		// .tickFormat(d3.format("+.0%")) //what format do you want https://github.com/d3/d3-format 
+		// 		.tickPadding(50) //distance from tick labels to tick marks
+
+		// let xAxisSettings = d3.axisBottom(x)
+		// 	.ticks(3)
+		// 	.tickSize(5)
+		// 	.tickPadding(10)
+		// 	.tickFormat(d3.timeFormat("%Y"))
+
+		// let xAxis = svg.append("g")
+		// 	.attr("class", "x axis") //give each axis a class
+		// 	.call(xAxisSettings)
+		// 	.attr("transform", `translate(0,${height - margin.bottom})`)
+
+
+		// let yAxis = svg.append("g")
+		// 	.attr("class", "y axis")
+		// 	.call(yAxisSettings)
+		// 	.attr("transform", `translate(${margin.left},0)`)
+
+		let x = d3.scaleLinear()
+			.domain([5000,31000]) //d3 extent
+			.range([margin.left, width - margin.right])
+
+			//in this case we need to use scaleLinear because we're dealin linear data
+		let y = d3.scaleBand()
+		.range([0,height])	
+		.domain(data.map(function (d) { return d.group }))
+		.padding(1)
+			
+
+
+		//define the settings for our axes
+		//https://github.com/d3/d3-axis
+		// https://github.com/d3/d3-time-format
+		//https://github.com/d3/d3-format
+		let yAxisSettings = d3.axisLeft(y) //set axis to the left
+			.ticks(10) //approx how many ticks, the function will not necesarily give you that number
+			.tickSize(5) //size of tick lines
+			// .tickFormat(d3.format("+.0%")) //what format do you want https://github.com/d3/d3-format 
+			.tickPadding(10) //distance from tick labels to tick marks
+
+		let xAxisSettings = d3.axisBottom(x)
+			.ticks(3)
+			.tickSize(10)
+			.tickPadding(10)
+			.tickFormat(d3.format("$"))
+
+		let bg = svg.append("rect")
+			.attr("x", margin.left)
+			.attr("y", 0)
+			.attr("width", width-35)
+			.attr("height", height-10)
+			.style("fill", "rgba(0,0,0,.04)")
+
+		//adding to the axes to our chart
+		let xAxis = svg.append("g")
+			.attr("class", "x axis") //give each axis a class
+			.call(xAxisSettings)
+			.attr("transform", `translate(0,${height - margin.bottom})`)
+
+
+		let yAxis = svg.append("g")
+			.attr("class", "y axis")
+			.call(yAxisSettings)
+			.attr("transform", `translate(${margin.left},0)`)
+			.style("font", "14px times");
+
+		// Lines
+		svg.selectAll("myline")
+		.data(data)
+		.join("line")
+			.attr("x1", function(d) { return x(d.value1); })
+			.attr("x2", function(d) { return x(d.value2); })
+			.attr("y1", function(d) { return y(d.group); })
+			.attr("y2", function(d) { return y(d.group); })
+			.attr("stroke", "grey")
+			.attr("stroke-width", "2px")
+	
+		// Circles of variable 1
+		svg.selectAll("mycircle")
+		.data(data)
+		.join("circle")
+			.attr("cx", function(d) { return x(d.value1); })
+			.attr("cy", function(d) { return y(d.group); })
+			.attr("r", "10")
+			.style("fill", "#69b3a2")
+	
+		// Circles of variable 2
+		svg.selectAll("mycircle")
+		.data(data)
+		.join("circle")
+			.attr("cx", function(d) { return x(d.value2); })
+			.attr("cy", function(d) { return y(d.group); })
+			.attr("r", "10")
+			.style("fill", "#4C4082")
+	})
+</script>
